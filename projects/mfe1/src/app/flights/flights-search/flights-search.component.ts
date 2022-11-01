@@ -12,4 +12,13 @@ export class FlightsSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  search(): void {
+    alert('Not implemented for this demo!');
+  }
+
+  terms(): void {
+    alert('Not implemented for this demo!');
+  }
+
+
 }
