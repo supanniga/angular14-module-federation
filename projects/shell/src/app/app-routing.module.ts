@@ -1,3 +1,4 @@
+import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -11,8 +12,14 @@ const routes: Routes = [
   },
   {
     path: 'flights',
-    loadChildren: () => import('mfe1/Module').then(m => m.FlightsModule)
-  },
+    loadChildren: () =>
+         loadRemoteModule({
+            type: 'module',
+            remoteEntry: 'http://localhost:4201/remoteEntry.js',
+            exposedModule: './Module'
+        })
+        .then(m => m.FlightsModule)
+},
   {
     path: '**',
     component: NotFoundComponent
