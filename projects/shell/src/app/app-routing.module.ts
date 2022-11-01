@@ -10,6 +10,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'flights',
+    loadChildren: () => import('mfe1/Module').then(m => m.FlightsModule)
+  },
+  {
     path: '**',
     component: NotFoundComponent
   },
