@@ -6,6 +6,7 @@ module.exports = withModuleFederationPlugin({
 
   exposes: {
     './Component': './projects/mfe1/src/app/app.component.ts',
+    './Module': './projects/mfe1/src/app/flights/flights.module.ts',
   },
 
   shared: {
