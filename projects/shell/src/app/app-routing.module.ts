@@ -13,13 +13,23 @@ const routes: Routes = [
   {
     path: 'flights',
     loadChildren: () =>
-         loadRemoteModule({
-            type: 'module',
-            remoteEntry: 'http://localhost:4201/remoteEntry.js',
-            exposedModule: './Module'
-        })
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        exposedModule: './Module'
+      })
         .then(m => m.FlightsModule)
-},
+  },
+  {
+    path: 'example',
+    loadChildren: () =>
+      loadRemoteModule({
+        type: 'module',
+        remoteEntry: 'http://localhost:4202/remoteEntry.js',
+        exposedModule: './Module'
+      })
+        .then(m => m.ExampleModule)
+  },
   {
     path: '**',
     component: NotFoundComponent

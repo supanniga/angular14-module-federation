@@ -1,1 +1,0 @@
-declare module 'mfe2/ExampleModule';
